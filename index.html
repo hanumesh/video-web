@@ -1,192 +1,188 @@
-
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>video_web</title>
-<style type="text/css">
-body {
-background-color: #f4f4f4;
-color: #5a5656;
-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-font-size: 16px;
-line-height: 1.5em;
-}
-a { text-decoration: none; }
-h1 { font-size: 1em; }
-h1, p {
-margin-bottom: 10px;
-}
-strong {
-font-weight: bold;
-}
-.uppercase { text-transform: uppercase; }
-
-/* ---------- LOGIN ---------- */
-#login {
-margin: 50px auto;
-width: 300px;
-}
-form fieldset input[type="text"], input[type="password"] {
-background-color: #e5e5e5;
-border: none;
-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-color: #5a5656;
-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-font-size: 14px;
-height: 50px;
-outline: none;
-padding: 0px 10px;
-width: 280px;
--webkit-appearance:none;
-}
-form fieldset input[type="submit"] {
-background-color: #008dde;
-border: none;
-border-radius: 3px;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-color: #f4f4f4;
-cursor: pointer;
-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-height: 50px;
-text-transform: uppercase;
-width: 300px;
--webkit-appearance:none;
-}
-form fieldset a {
-color: #5a5656;
-font-size: 10px;
-}
-form fieldset a:hover { text-decoration: underline; }
-.btn-round {
-background-color: #5a5656;
-border-radius: 50%;
--moz-border-radius: 50%;
--webkit-border-radius: 50%;
-color: #f4f4f4;
-display: block;
-font-size: 12px;
-height: 50px;
-line-height: 50px;
-margin: 30px 125px;
-text-align: center;
-text-transform: uppercase;
-width: 50px;
-}
-.facebook-before {
-background-color: #0064ab;
-border-radius: 3px 0px 0px 3px;
--moz-border-radius: 3px 0px 0px 3px;
--webkit-border-radius: 3px 0px 0px 3px;
-color: #f4f4f4;
-display: block;
-float: left;
-height: 50px;
-line-height: 50px;
-text-align: center;
-width: 50px;
-}
-.facebook {
-background-color: #0079ce;
-border: none;
-border-radius: 0px 3px 3px 0px;
--moz-border-radius: 0px 3px 3px 0px;
--webkit-border-radius: 0px 3px 3px 0px;
-color: #f4f4f4;
-cursor: pointer;
-height: 50px;
-text-transform: uppercase;
-width: 250px;
-}
-.twitter-before {
-background-color: #189bcb;
-border-radius: 3px 0px 0px 3px;
--moz-border-radius: 3px 0px 0px 3px;
--webkit-border-radius: 3px 0px 0px 3px;
-color: #f4f4f4;
-display: block;
-float: left;
-height: 50px;
-line-height: 50px;
-text-align: center;
-width: 50px;
-}
-.twitter {
-background-color: #1bb2e9;
-border: none;
-border-radius: 0px 3px 3px 0px;
--moz-border-radius: 0px 3px 3px 0px;
--webkit-border-radius: 0px 3px 3px 0px;
-color: #f4f4f4;
-cursor: pointer;
-height: 50px;
-text-transform: uppercase;
-width: 250px;
-}
-
-
-.google-before {
-background-color: #E2777F;
-border-radius: 3px 0px 0px 3px;
--moz-border-radius: 3px 0px 0px 3px;
--webkit-border-radius: 3px 0px 0px 3px;
-color: #f4f4f4;
-display: block;
-float: left;
-height: 50px;
-line-height: 50px;
-text-align: center;
-width: 50px;
-}
-.google {
-background-color: #ED2F3D;
-border: none;
-border-radius: 0px 3px 3px 0px;
--moz-border-radius: 0px 3px 3px 0px;
--webkit-border-radius: 0px 3px 3px 0px;
-color: #f4f4f4;
-cursor: pointer;
-height: 50px;
-text-transform: uppercase;
-width: 250px;
-}
-
-</style>
-</head>
-<body>
-<div id="login">
-<h1><strong>Welcome.</strong> Please login.</h1>
-<form action="javascript:void(0);" method="get">
-<fieldset>
-<p><input type="text" required value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
-<p><input type="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
-<p><a href="#">Forgot Password?</a></p>
-<!--<p><input type="submit" value="Login"></p> -->
-    <p><input type="submit" value="Login" onclick="document.location.href = '/video.html'" /></p>
-</fieldset>
-</form>
-<p><span class="btn-round">or</span></p>
-<p>
-<a class="facebook-before"></a>
-<button class="facebook">Login Using Facbook</button>
-</p>
-<p>
-<a class="twitter-before"></a>
-<button class="twitter">Login Using Twitter</button>
-</p>
-<p>
-<a class="google-before"></a>
-<button class="google">Login Using Google</button>
-</p>
-</div> <!-- end login -->
+    <head>
+       <link rel="stylesheet" href="libs/css/materialize.min.css">
+       <link rel="stylesheet" href="libs/css/default.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Online Interview</title>
+    </head>
+    <body>
+    <nav class="nav-header">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <button type="submit" class="btn waves-effect waves-red-top" style="width: 250px;
+    height: 40px;"><i class="fa fa-calendar-plus-o">Schedule</i></button>
+    
+          <!-- <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'><i class="material-icons">schedule</i></a> 
+            
+              <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">HTML</a></li>
+                <li><a href="#!">Javascript</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Ruby on rails</a></li>
+                 <li><a href="#!">Python</a></li>
+                  <li><a href="#!">C </a></li>
+                  <li><a href="#!">C ++ </a></li>
+                  <li><a href="#!">Java </a></li>
+                  <li><a href="#!">Dotnet </a></li>
+                  <li><a href="#!">Plain Texts </a></li>
+              </ul>   -->
 
 
 
-<script type="text/javascript"src="built_rt.min.js"></script>
-<script type="text/javascript"src="script.js"></script>
 
+        <div class="overlay-trigger">
+  <!-- If you don't want the overlay you don't need this -->
 
-</body>
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="btn-menu-item btn-menu-item--primary clearfix" data-position="left" data-tooltip="Invite"></i>
+      <i class="fa fa-user-plus"></i>
+    </a>
+
+    <ul>
+      <li>
+        <!-- add span with .mobile-fab-tip here after the <li> tag... -->
+        <span class="mobile-fab-tip">Facebook</span>
+        <!-- ...and before the <a> tag -->
+        <a href="#https://www.linkedin.com/" class="btn-floating blue light tooltipped" data-position="left" data-tooltip="Facebook">
+          <!-- <i class="material-icons"></i> -->
+           <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <span class="mobile-fab-tip">Twitter</span>
+        <a  href="#" class="btn-floating blue darken-1 tooltipped" data-position="left" data-tooltip="Twitter">
+        <!--   <i class="material-icons"></i> -->
+        <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <span class="mobile-fab-tip">Linkedin</span>
+        <a href="#" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Linkedin">
+          <!-- <i class="material-icons"></i> -->
+           <i class="fa fa-linkedin"></i>
+
+        </a>
+      </li>
+        <li>
+        <span class="mobile-fab-tip">Gmail</span>
+        <a href="#" class="btn-floating red tooltipped" data-position="left" data-tooltip="Gmail">
+          <!-- <i class="material-icons"></i> -->
+           <img src="libs/img/gmail.png" style="width: 35px;">
+
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+        
+      </ul>
+    </div>
+  </nav>
+
+    <div class="jumbotron">
+    <div class="fleft">
+       <!--  <div class="jumbotron"> -->
+        <h4 id="title">Start an interview </h4>
+
+        <p id="subTitle"></p>      
+        <form id="createRoom">
+         <div class="input-group">
+             <input type="text" placeholder="enter type of interview" class="form-control floating-label" style="width:50%;" id="sessionInput"/>
+              <button type="submit" class="btn waves-effect waves-red" style="margin-top:-1%">Create it! <i class="fa fa-share"></i></button>
+
+         </div>
+        </form>
+       <!--  <div class="videoContainer"> -->
+        <div class="video-container-local">
+            <video class="responsive-video" id="localVideo" frameborder="0" allowfullscreen  oncontextmenu="return false;"></video>
+            <!-- <div id="localVolume" class="volume_bar"></div> -->
+        </div>
+        <div controls  id="remotes"></div>
+        </div>
+         <div class="fright">
+           <div id="editor">
+                    
+         </div>
+      </div>
+         </div>
+
+         <footer class="page-footer-bottom">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Follow us on
+            <a class="grey-text text-lighten-4 right" href="#">Twitter</a>
+             <a class="grey-text text-lighten-4 right" href="#">Linkedin</a>
+              <a class="grey-text text-lighten-4 right" href="#">Facebook</a>
+
+            </div>
+          </div>
+        </footer>
+
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script> -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="libs/js/materialize.min.js"></script>
+        <script src="libs/js/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="libs/js/ext-beautify.js" type="text/javascript" charset="utf-8"></script>
+<!--        <script src="libs/ace/theme/twilight.js" type="text/javascript" charset="utf-8"></script> -->
+       
+        <script>
+          
+            var width = 0;
+          $('.overlay-trigger').click(overlay);
+          $('.overlay').click(hideOverlay);
+          $(window).on("scroll", hideOverlay);
+
+          function overlay(event) {
+            if (window.innerWidth < 992) {
+              if ($('.overlay').css('display') == 'none') {
+                $('.overlay').css({
+                  'display': 'block'
+                });
+                width = window.innerWidth;  
+              }
+            }
+          }
+
+          function hideOverlay(event) {
+            if (width < 992) {
+              if ($('.overlay').css('display') == 'block') {
+                $('.overlay').css({
+                  'display': 'none'
+                });
+              }
+            }
+          }
+
+            $('.dropdown-button').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrain_width: true, // Does not change width of dropdown to that of the activator
+              hover: true, // Activate on hover
+              gutter: 0, // Spacing from edge
+              belowOrigin: true // Displays dropdown below the button
+            }
+          );
+          $('.dropdown-button2').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrain_width: true, // Does not change width of dropdown to that of the activator
+              hover: true, // Activate on hover
+              gutter: 0, // Spacing from edge
+              belowOrigin: true // Displays dropdown below the button
+            }
+          );
+        $(document).ready(function(){
+            $('.scrollspy').scrollSpy();
+          });
+
+                  </script>
+
+                   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="simplewebrtc.bundle.js"></script>
+        <script src="libs/js/lodash.min.js"></script>
+        <script src="video_script.js"></script>
+    </body>
 </html>

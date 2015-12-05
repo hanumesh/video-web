@@ -1,4 +1,4 @@
-var WebRTC = require('webrtc');
+var WebRTC = require('./webrtc');
 var WildEmitter = require('wildemitter');
 var webrtcSupport = require('webrtcsupport');
 var attachMediaStream = require('attachmediastream');
@@ -21,13 +21,13 @@ function SimpleWebRTC(opts) {
             adjustPeerVolume: true,
             peerVolumeWhenSpeaking: 0.25,
             media: {
-                video: false,
+                video: true,
                 audio: true
             },
             receiveMedia: { // FIXME: remove old chrome <= 37 constraints format
                 mandatory: {
                     OfferToReceiveAudio: true,
-                    OfferToReceiveVideo: false
+                    OfferToReceiveVideo: true
                 }
             },
             localVideo: {
@@ -128,7 +128,7 @@ function SimpleWebRTC(opts) {
     this.webrtc = new WebRTC(opts);
 
     // attach a few methods from underlying lib to simple.
-    ['mute', 'unmute', 'pauseVideo', 'resumeVideo', 'pause', 'resume', 'sendToAll', 'sendDirectlyToAll'].forEach(function (method) {
+    ['mute', 'unmute', 'pauseVideo', 'resumeVideo', 'pause', 'resume', 'sendToAll', 'sendDirectlyToAll', 'getPeers'].forEach(function (method) {
         self[method] = self.webrtc[method].bind(self.webrtc);
     });
 
@@ -261,9 +261,9 @@ SimpleWebRTC.prototype = Object.create(WildEmitter.prototype, {
 SimpleWebRTC.prototype.leaveRoom = function () {
     if (this.roomName) {
         this.connection.emit('leave');
-        this.webrtc.peers.forEach(function (peer) {
-            peer.end();
-        });
+        while (this.webrtc.peers.length) {
+            this.webrtc.peers.shift().end();
+        }
         if (this.getLocalScreen()) {
             this.stopScreenShare();
         }
@@ -439,12 +439,13 @@ SimpleWebRTC.prototype.stopScreenShare = function () {
 
 SimpleWebRTC.prototype.testReadiness = function () {
     var self = this;
-    if (this.webrtc.localStream && this.sessionReady) {
+    if (this.webrtc.localStreams.length > 0 && this.sessionReady) {
         self.emit('readyToCall', self.connection.getSessionid());
     }
 };
 
 SimpleWebRTC.prototype.createRoom = function (name, cb) {
+    this.roomName = name;
     if (arguments.length === 2) {
         this.connection.emit('create', name, cb);
     } else {
